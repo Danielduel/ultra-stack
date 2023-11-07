@@ -21,14 +21,6 @@ import { ImportMapJson } from "https://deno.land/x/danielduel_ultra_stack_ultra@
 import { createTRPCServerProvider } from "./createTRPCServerProvider.tsx";
 import { createTRPCReact } from "@trpc/react-query";
 
-const importMap = Deno.env.get("ULTRA_MODE") === "development"
-  ? await readImportMap("./importMap.dev.json")
-  : await readImportMap("./importMap.json");
-
-importMap.imports["ultra/"] = "/ultra/";
-importMap.imports["@/"] = "/packages/";
-importMap.imports["zod"] = "/_x/zod@v3.21.4/mod.ts";
-importMap.imports["https://deno.land/x/"] = "/_x/";
 // ts_brand@0.0.1/mod.ts
 
 
@@ -50,15 +42,23 @@ importMap.imports["https://deno.land/x/"] = "/_x/";
 //   });
 // };
 
-export const createRenderer = <Router extends AnyRouter>(
+export const createRenderer = async <Router extends AnyRouter>(
   root: string,
   clientPath: string,
   appRouter: Router,
   trpc: ReturnType<typeof createTRPCReact<Router>>,
+  getImportMap: () => Promise<ImportMapJson>,
   importMapTransform: (importMap?: ImportMapJson) => ImportMapJson,
   queryClient: QueryClient,
   App: () => JSX.Element
 ) => {
+  const importMap = await getImportMap();
+
+  importMap.imports["ultra/"] = "/ultra/";
+  importMap.imports["@/"] = "/packages/";
+  importMap.imports["zod"] = "/_x/zod@v3.21.4/mod.ts";
+  importMap.imports["https://deno.land/x/"] = "/_x/";
+
   const innerImportMap = importMapTransform(importMap);
   const TRPCServerProvider = createTRPCServerProvider(queryClient, appRouter, trpc);
   return createRenderHandler({
