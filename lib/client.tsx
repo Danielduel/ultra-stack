@@ -3,12 +3,14 @@ import { BrowserRouter } from "react-router-dom";
 
 // React Query
 import { Hydrate, QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import UltraClient, { hydrate } from "https://deno.land/x/danielduel_ultra_stack_ultra@0.0.5/lib/react/client.js";
+import UltraClient, { ImportMapScript, hydrate } from "https://deno.land/x/danielduel_ultra_stack_ultra@0.0.5/lib/react/client.js";
 import { HelmetProvider } from "react-helmet-async";
 
 import { createTRPCReact } from "@trpc/react-query";
 import { createTRPCClientProvider } from "./createTRPCClientProvider.tsx";
 import { AnyRouter } from "@trpc/server/dist/index.d.ts";
+import { Helmet } from "react-helmet-async";
+import { TwindStyleTag } from "./twind.tsx";
 
 declare const __REACT_QUERY_DEHYDRATED_STATE: unknown;
 
@@ -28,6 +30,10 @@ export const createClientAppAndHydrate = <Router extends AnyRouter>(
               <TRPCClientProvider>
                 <BrowserRouter>
                   <App />
+                  <Helmet>
+                    <ImportMapScript />
+                    <TwindStyleTag />
+                  </Helmet>
                 </BrowserRouter>
               </TRPCClientProvider>
             </Hydrate>

@@ -19,6 +19,9 @@ import { StrictMode } from "react";
 import { ImportMapJson } from "https://deno.land/x/danielduel_ultra_stack_ultra@0.0.5/lib/deps.ts";
 import { createTRPCServerProvider } from "./createTRPCServerProvider.tsx";
 import { createTRPCReact } from "@trpc/react-query";
+import { Helmet } from "react-helmet-async";
+import { ImportMapScript } from "https://deno.land/x/danielduel_ultra_stack_ultra@0.0.5/lib/react/client.js";
+import { TwindStyleTag } from "./twind.tsx";
 
 // ts_brand@0.0.1/mod.ts
 
@@ -72,6 +75,10 @@ export const createRenderer = async <Router extends AnyRouter>(
                 <TRPCServerProvider>
                   <StaticRouter location={new URL(request.url).pathname}>
                     <App />
+                    <Helmet>
+                      <ImportMapScript />
+                      <TwindStyleTag />
+                    </Helmet>
                   </StaticRouter>
                 </TRPCServerProvider>
               </QueryClientProvider>
