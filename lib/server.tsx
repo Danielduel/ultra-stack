@@ -1,10 +1,10 @@
 import { renderToReadableStream } from "react-dom/server";
-import { createCompilerHandler } from "ultra/lib/react/compiler.ts";
-import { createRenderHandler } from "ultra/lib/react/renderer.ts";
-import UltraServer from "ultra/lib/react/server.js";
-import { readImportMap } from "ultra/lib/utils/import-map.ts";
-import { createStaticHandler } from "ultra/lib/static/handler.ts";
-import { composeHandlers } from "ultra/lib/handler.ts";
+import { createCompilerHandler } from "../submodules/ultra-fork/lib/react/compiler.ts";
+import { createRenderHandler } from "../submodules/ultra-fork/lib/react/renderer.ts";
+import UltraServer from "../submodules/ultra-fork/lib/react/server.js";
+import { readImportMap } from "../submodules/ultra-fork/lib/utils/import-map.ts";
+import { createStaticHandler } from "../submodules/ultra-fork/lib/static/handler.ts";
+import { composeHandlers } from "../submodules/ultra-fork/lib/handler.ts";
 import { refresh } from "https://deno.land/x/refresh@1.0.0/mod.ts";
 import { serve } from "https://deno.land/std@0.176.0/http/server.ts";
 import { compile } from "https://deno.land/x/mesozoic@v1.3.10/lib/compiler.ts";
@@ -17,7 +17,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { StrictMode } from "react";
 
-import { ImportMapJson } from "ultra/lib/deps.ts";
+import { ImportMapJson } from "../submodules/ultra-fork/lib/deps.ts";
 import { createTRPCServerProvider } from "./createTRPCServerProvider.tsx";
 import { createTRPCReact } from "@trpc/react-query";
 

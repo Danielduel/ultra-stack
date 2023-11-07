@@ -3,7 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 
 // React Query
 import { Hydrate, QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import UltraClient, { hydrate } from "ultra/lib/react/client.js";
+import UltraClient, { hydrate } from "../submodules/ultra-fork/lib/react/client.js";
 import { HelmetProvider } from "react-helmet-async";
 
 import { createTRPCReact } from "@trpc/react-query";
