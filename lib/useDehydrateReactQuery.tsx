@@ -1,5 +1,5 @@
 import { dehydrate, QueryClient } from "@tanstack/react-query";
-import useServerInsertedHTML from "ultra/hooks/use-server-inserted-html.js";
+import useServerInsertedHTML from "https://deno.land/x/danielduel_ultra_stack_ultra@0.0.5/hooks/use-server-inserted-html.js";
 
 export function useDehydrateReactQuery(queryClient: QueryClient) {
   useServerInsertedHTML(() => {

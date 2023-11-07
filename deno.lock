@@ -1,8 +1,22 @@
 {
   "version": "3",
+  "packages": {
+    "specifiers": {
+      "npm:@types/node": "npm:@types/node@18.11.17"
+    },
+    "npm": {
+      "@types/node@18.11.17": {
+        "integrity": "sha512-HJSUJmni4BeDHhfzn6nF0sVmd1SMezP7/4F0Lq+aXzmp2xm9O7WXrUtHW/CHlYVtZUbByEvWidHqRtcJXGF2Ng==",
+        "dependencies": {}
+      }
+    }
+  },
   "redirects": {
+    "https://deno.land/x/ultra/hooks/use-server-inserted-html.js": "https://deno.land/x/ultra@v2.3.8/hooks/use-server-inserted-html.js",
     "https://esm.sh/v128/@types/react@~18.2/index.d.ts": "https://esm.sh/v128/@types/react@18.2.25/index.d.ts",
-    "https://esm.sh/v128/@types/react@~18.2/jsx-dev-runtime~.d.ts": "https://esm.sh/v128/@types/react@18.2.25/jsx-dev-runtime~.d.ts"
+    "https://esm.sh/v128/@types/react@~18.2/jsx-dev-runtime~.d.ts": "https://esm.sh/v128/@types/react@18.2.25/jsx-dev-runtime~.d.ts",
+    "https://esm.sh/v133/@types/react-dom@~18.2/client~.d.ts": "https://esm.sh/v133/@types/react-dom@18.2.13/client~.d.ts",
+    "https://esm.sh/v133/@types/react-dom@~18.2/server~.d.ts": "https://esm.sh/v133/@types/react-dom@18.2.13/server~.d.ts"
   },
   "remote": {
     "https://deno.land/std@0.176.0/_util/asserts.ts": "178dfc49a464aee693a7e285567b3d0b555dc805ff490505a8aae34f9cfb1462",
