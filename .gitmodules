@@ -1,0 +1,8 @@
+[submodule "submodules/ultra-fork"]
+	path = submodules/ultra-fork
+	url = git@github.com:Danielduel/ultra.git
+	branch = develop
+[submodule "submodules/pentagon-fork"]
+	path = submodules/pentagon-fork
+	url = git@github.com:Danielduel/pentagon.git
+	branch = develop
