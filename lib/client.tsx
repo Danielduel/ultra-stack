@@ -47,6 +47,6 @@ export const createClientAppAndHydrate = <Router extends AnyRouter>(
 
   return [
     ClientApp,
-    hydrate
+    innerHydrate
   ] as const;
 };
