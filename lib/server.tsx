@@ -2,7 +2,6 @@ import { renderToReadableStream } from "react-dom/server";
 import { createCompilerHandler } from "https://deno.land/x/danielduel_ultra_stack_ultra@0.0.5/lib/react/compiler.ts";
 import { createRenderHandler } from "https://deno.land/x/danielduel_ultra_stack_ultra@0.0.5/lib/react/renderer.ts";
 import UltraServer from "https://deno.land/x/danielduel_ultra_stack_ultra@0.0.5/lib/react/server.js";
-import { readImportMap } from "https://deno.land/x/danielduel_ultra_stack_ultra@0.0.5/lib/utils/import-map.ts";
 import { createStaticHandler } from "https://deno.land/x/danielduel_ultra_stack_ultra@0.0.5/lib/static/handler.ts";
 import { composeHandlers } from "https://deno.land/x/danielduel_ultra_stack_ultra@0.0.5/lib/handler.ts";
 import { refresh } from "https://deno.land/x/refresh@1.0.0/mod.ts";
@@ -41,6 +40,7 @@ import { createTRPCReact } from "@trpc/react-query";
 //     },
 //   });
 // };
+export { readImportMap } from "https://deno.land/x/danielduel_ultra_stack_ultra@0.0.5/lib/utils/import-map.ts";
 
 export const createRenderer = async <Router extends AnyRouter>(
   root: string,
